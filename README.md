@@ -1,11 +1,3 @@
-## This MVP Project represents what I could learn in 2021.
-
-### I have started learning Web development in 2021.01.01.
-
-### First, I have started with the Basics. HTML, CSS, Javascript. Than i was curious about the Backend Technologies. For example: NodeJS,Kotlin (Ktor).
-
-### The project's purpose is to show what the creator can make on his own after one year of disciplined work.
-
 # About the project
 
 ### Backend & Admin user Focused **Webshop** with GLS General Logistic System **Parcel label printing** and Stripe integration.
