@@ -9,7 +9,6 @@
 <img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/mongodb-icon-1.svg" height="50px">
 <img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/stripe-4.svg" height="30px">
 <img src="https://mygls.hu/Content/Images/logo-inverse.png" height="30px">
-<img src="https://online.gls-hungary.com/img/postive_logo.png#gh-light-mode-only" height="30px">
 </p>
 
 
@@ -103,6 +102,8 @@ Note that, the admin demo user didn't have access to delete or modify the follow
 - Set order's statuses in a single or in Bulk way.
 
 ## **Print ParcelLabels via the GLS API.**
+<img src="https://online.gls-hungary.com/img/postive_logo.png#gh-light-mode-only" height="30px">
+
 
 The GLS Label Printing runs on the test environment, that's why there is no barcode on the labels.
 
