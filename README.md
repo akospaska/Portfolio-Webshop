@@ -127,11 +127,11 @@ Implemented GLS API Features
   - Address
   - Email
   - Etc.
-<<<<<<< HEAD
-- Automata order status controller
-=======
+
+
+
 - **Automata** order status controller
->>>>>>> 59ba574cb793598492c56db215d53bd9fc170450
+
   - **Every hour** a cronJob get the opened order's status based on the printed ParcelNumbers
   - Based on the API result the order status could be changed to:
     - OnDelivery
