@@ -101,8 +101,8 @@ Note that, the admin demo user didn't have access to delete or modify the follow
 
 - Set order's statuses in a single or in Bulk way.
 
-## **Print ParcelLabels via the GLS API.**
-<img src="https://online.gls-hungary.com/img/postive_logo.png#gh-light-mode-only" height="30px">
+## **Print ParcelLabels via the GLS API.** <img src="https://online.gls-hungary.com/img/postive_logo.png#gh-light-mode-only" height="30px">
+
 
 
 The GLS Label Printing runs on the test environment, that's why there is no barcode on the labels.
