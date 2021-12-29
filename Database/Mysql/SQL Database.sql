@@ -161,6 +161,7 @@ CREATE TABLE `printedlabels` (
   `parcelId` int NOT NULL,
   `orderId` int NOT NULL,
   `printOrientation` int NOT NULL,
+  `createdBy` int NOT NULL, --MyGLS accountId
   `creationDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) 

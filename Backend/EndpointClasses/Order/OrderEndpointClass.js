@@ -1,5 +1,3 @@
-const MongoClient = require("mongodb").MongoClient;
-
 const sendOrderSummaryEmailTemplate = require("../../Classes/EmailSending/EmailTemplates/EmailTemplates");
 const Order = require("../../Classes/Order/Order");
 const ShoppingCart = require("../../Classes/ShoppingCart/ShoppingCart");
@@ -7,62 +5,7 @@ const GLSAPI = require("../../Backend/Api/GLSAPI");
 const LabelCreation = require("../../Classes/GLS/LabelCreation/LabelCreation");
 const PrintLabelRequest = require("../../Classes/GLS/PrintLabelRequest/PrintLabelRequest");
 
-const EmailTemplates = require("../../Classes/EmailSending/EmailTemplates/EmailTemplates");
-
 const Logging = require("../../Classes/Logging/Logging");
-
-const MyslqDatabaseConnection = require("../../Backend/BackendConfig/MysqlDatabaseConfig");
-
-const GraphQlConfig = require("../../Backend/Api/GRAPHQL");
-
-const axios = require("axios");
-
-/* const reqbody = {
-  ClientNumberList: [],
-  Password: ["Lots of number!"],
-  Username: "akos.paska@gls-hungary.com",
-  ParcelList: [
-    {
-      CODAmount: null,
-      CODCurrency: "",
-      CODReference: "Content",
-      ClientNumber: 100000001,
-      ClientReference: "ClientReference",
-      Content: "CodReference",
-      Count: 1,
-      DeliveryAddress: {
-        City: "Cimzett varos",
-        ContactEmail: "example@gmail.com",
-        ContactName: "Cimzett neve",
-        ContactPhone: "+36202222222",
-        CountryIsoCode: "hu",
-        HouseNumber: "15",
-        HouseNumberInfo: "Egyeb info",
-        Name: "Teszt Cimzett",
-        Street: "Cimzett utca",
-        ZipCode: "6000",
-      },
-      ParcelNumber: null,
-      PickupAddress: {
-        City: "Teszt varos",
-        ContactEmail: "example@gmail.com",
-        ContactName: "Teszt felado",
-        ContactPhone: "+36202222222",
-        CountryIsoCode: "hu",
-        HouseNumber: "15",
-        HouseNumberInfo: "Egyéb info",
-        Name: "Teszt felado",
-        Street: "Teszt Utca",
-        ZipCode: "6000",
-      },
-      PickupDate: "/Date(1636070400000+0200)/",
-      ServiceList: [],
-    },
-  ],
-  PrintPosition: 1,
-  ShowPrintDialog: false,
-  TypeOfPrinter: "",
-}; */
 
 const order = new Order();
 const sendEmail = new sendOrderSummaryEmailTemplate();
@@ -70,18 +13,6 @@ const shoppingCart = new ShoppingCart();
 const label = new LabelCreation();
 const logging = new Logging();
 const printLabels = new PrintLabelRequest();
-
-/* const sendLoginDetails = async () => {
-  try {
-    const apiResponse = await BackendRESTrequest.post("/login", { email: loginEmail, password: password });
-    dispatch(setLoginStatus(apiResponse.data.isLoggedIn));
-    dispatch(setRefreshCartSize(apiResponse.data.cart.length));
-    dispatch(setAdminStatus(apiResponse.data.isAdminAccount));
-    window.location.href = "/";
-  } catch (error) {
-    () => alert(error);
-  }
-}; */
 
 class OrderEndpointClass {
   async OrderVerification(req, res) {
@@ -131,7 +62,7 @@ class OrderEndpointClass {
     let apiresp;
 
     try {
-      apiresp = await GLSAPI.post("", reqbody);
+      apiresp = await GLSAPI.post("PrintLabels", reqbody);
     } catch (error) {
       apiresp = error;
 
@@ -176,7 +107,7 @@ class OrderEndpointClass {
         if (searchIndex == -1) parcelNumbersWithOrderId.push({ orderId: printedOrderId, ParcelNumber: a.ParcelNumber });
 
         //insert into the database the printed parcelnumbers based on the orderId
-        await logging.insertParcelNumbersList(a.ParcelNumber, a.ParcelId, printedOrderId, printOrientation);
+        await logging.insertParcelNumbersList(a.ParcelNumber, a.ParcelId, printedOrderId, printOrientation, selectedMyglsAccount);
       });
 
       //if the orderIdsWithError array contains values, then set the orderId's status to "issue during printed" and insert the values into the loghistory Table
@@ -246,7 +177,6 @@ class OrderEndpointClass {
       res.send({ printActionId: newPrintActionId, pdfCreated: false, containsError: true });
     }
   }
-  //CUTTED FROM HERE
 }
 
 module.exports = OrderEndpointClass;

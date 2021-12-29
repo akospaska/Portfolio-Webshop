@@ -1,5 +1,6 @@
 const express = require("express");
 const expressGraphQL = require("express-graphql").graphqlHTTP;
+const cron = require("node-cron");
 
 const fs = require("fs");
 
@@ -16,8 +17,6 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.static(__dirname + "/public"));
 
-const MyslqDatabaseConnection = require("./Backend/BackendConfig/MysqlDatabaseConfig");
-
 //Import Classes
 const EmailTemplates = require("./Classes/EmailSending/EmailTemplates/EmailTemplates");
 const Account = require("./EndpointClasses/Account/Account");
@@ -25,6 +24,7 @@ const Session = require("./EndpointClasses/Session/Session");
 const OrderEndpoint = require("./EndpointClasses/Order/OrderEndpointClass");
 
 const SessionClass = require("./Classes/Authentication/Session");
+const StatusChecker = require("./Classes/GLS/StatusChecker/StatusChecker");
 
 const ContentProvider = require("./EndpointClasses/ContentProvider/ContentProvider");
 const Cache = require("./Classes/Cache/Cache");
@@ -209,4 +209,11 @@ app.post("/webhook", express.raw({ type: "application/json" }), async (request, 
   } else {
     response.sendStatus(400);
   }
+});
+
+const statusChecker = new StatusChecker();
+
+//Once an Hour get and set the opened orders statuses via the GLS API.
+cron.schedule("1 59 * * * *", () => {
+  statusChecker.checkOpenedOrdersStatuses();
 });

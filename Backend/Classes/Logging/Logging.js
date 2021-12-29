@@ -98,9 +98,9 @@ class Logging {
   async deletePrintErrorList(orderIdWithError) {
     const deleteResult = await MyslqDatabaseConnection.awaitQuery(`delete from printerrorlist where orderId=${orderIdWithError} `);
   }
-  async insertParcelNumbersList(ParcelNumber, ParcelId, printedOrderId, printOrientation) {
+  async insertParcelNumbersList(ParcelNumber, ParcelId, printedOrderId, printOrientation, myGLSAccountId) {
     await MyslqDatabaseConnection.awaitQuery(
-      `insert into printedlabels (parcelNumber,parcelId,orderId,printorientation) values(${ParcelNumber},${ParcelId},${printedOrderId}, ${printOrientation})`
+      `insert into printedlabels (parcelNumber,parcelId,orderId,printorientation,createdBy) values(${ParcelNumber},${ParcelId},${printedOrderId}, ${printOrientation},${myGLSAccountId})`
     );
   }
   async setOrderStatus(orderIdArray, status) {

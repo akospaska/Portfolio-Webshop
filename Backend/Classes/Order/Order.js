@@ -48,19 +48,11 @@ class Order {
       accountId == 0 ? (statusQuery = { confirmed: 0, status: 2, payed: 0 }) : (statusQuery = { confirmed: 1, status: 2, payed: 0 });
     } //BANK TRANSFER
     if (paymentType == 2) {
-      console.log("i am in 2");
       accountId == 0 ? (statusQuery = { confirmed: 0, status: 3, payed: 0 }) : (statusQuery = { confirmed: 1, status: 3, payed: 0 });
     } //COD
     if (paymentType == 3) {
-      console.log("i am in 3");
       statusQuery = { confirmed: 1, status: 3, payed: 1 };
     } //PAYED BY STRIPE //CONFIRMED READY TO PRINT
-
-    console.log(statusQuery);
-
-    console.log(
-      `insert into \`order\` (orderRequestConfirmationtSessionKey,accountId,confirmed,contactPersonId,status,payed) values("${sessionKey}",${accountId},${statusQuery.confirmed},${contactPersonId},${statusQuery.status},${statusQuery.payed})`
-    );
 
     const insertResult = await MyslqDatabaseConnection.awaitQuery(
       `insert into \`order\` (orderRequestConfirmationtSessionKey,accountId,confirmed,contactPersonId,status,payed) values("${sessionKey}",${accountId},${statusQuery.confirmed},${contactPersonId},${statusQuery.status},${statusQuery.payed})`
@@ -205,19 +197,3 @@ class Order {
   }
 }
 module.exports = Order;
-
-/*
-
-
-create contactPerson
-
-
-
-create order with contactpersonid
-
-decide is it logged or not 
-
-insert orderitem into orderitem with orderId
-
-send email confirmation
-*/
