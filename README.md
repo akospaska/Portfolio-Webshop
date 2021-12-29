@@ -1,5 +1,6 @@
 # About the project
 
+<p float="left">
 <img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/react-2.svg" height="50px">
 <img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/redux.svg" height="50px">
 <img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/nodejs-icon.svg" height="50px">
@@ -9,6 +10,9 @@
 <img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/stripe-4.svg" height="30px">
 <img src="https://mygls.hu/Content/Images/logo-inverse.png" height="30px">
 <img src="https://online.gls-hungary.com/img/postive_logo.png#gh-light-mode-only" height="30px">
+</p>
+
+
 
 ### Backend & Admin user Focused **Webshop** with GLS General Logistic System **Parcel label printing** and Stripe integration.
 
