@@ -1,8 +1,18 @@
 # About the project
 
+<img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/react-2.svg" height="50px">
+<img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/redux.svg" height="50px">
+<img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/nodejs-icon.svg" height="50px">
+<img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/graphql.svg" height="50px">
+<img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/mysql-6.svg" height="50px">
+<img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/mongodb-icon-1.svg" height="50px">
+<img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/stripe-4.svg" height="30px">
+<img src="https://mygls.hu/Content/Images/logo-inverse.png" height="30px">
+<img src="https://online.gls-hungary.com/img/postive_logo.png#gh-light-mode-only" height="30px">
+
 ### Backend & Admin user Focused **Webshop** with GLS General Logistic System **Parcel label printing** and Stripe integration.
 
-Note that, this porject is an **MVP**. 
+Note that, this porject is an **MVP**.
 
 The project is focused on the **Backend** technologies and problem solving.
 
@@ -31,9 +41,12 @@ Note that, the admin demo user didn't have access to delete or modify the follow
   - ReactJS
   - Redux
 - Backend:
+
   - NodeJS
   - Rest API + **GraphQL**
+
   - MailJet
+
 - Databases:
   - MySQL
   - MongoDB
@@ -65,7 +78,7 @@ Note that, the admin demo user didn't have access to delete or modify the follow
 
 - The customer can choose between three different payment methods:
 
-- Bank Transfer
+  - Bank Transfer
   - Cash on Demand
   - **Stripe**
 
@@ -109,7 +122,11 @@ Implemented GLS API Features
   - Address
   - Email
   - Etc.
+<<<<<<< HEAD
+- Automata order status controller
+=======
 - **Automata** order status controller
+>>>>>>> 59ba574cb793598492c56db215d53bd9fc170450
   - **Every hour** a cronJob get the opened order's status based on the printed ParcelNumbers
   - Based on the API result the order status could be changed to:
     - OnDelivery
