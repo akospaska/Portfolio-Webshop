@@ -35,7 +35,7 @@ For the Dummy Stripe payment please use the following data:
 - Expiration date: 04 / 24
 - CVC: 424
 
-Note that, the **admin demo** user didn't have access to delete or modify the following items:
+Note that, the **admin demo** user doesn't have access to delete or modify the following items:
 
 - Product
 - Category
@@ -172,7 +172,8 @@ Implemented GLS API Features
   - Name
   - Is it featured or not. (The featured items are displayed on the home screen)
 
-- Delete the product (Note that, the product will not be deleted. It will be set the "isDeleted" value to 1 in the database)
+- Delete the product (
+, the product will not be deleted. It will be set the "isDeleted" value to 1 in the database)
 
 ### **Category & Brand Manager**
 
