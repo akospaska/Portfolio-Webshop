@@ -15,7 +15,7 @@
 
 ### Backend & Admin user Focused **Webshop** with GLS General Logistic System **Parcel label printing** and Stripe integration.
 
-Note that, this porject is an **MVP**.
+Note that, this project is an **MVP**.
 
 The project is focused on the **Backend** technologies and problem solving.
 
