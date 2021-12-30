@@ -30,7 +30,12 @@ Admin Demo user's credential:
 - Username: admin
 - Password: admin
 
-Note that, the admin demo user didn't have access to delete or modify the following items:
+For the Dummy Stripe payment please use the following data:
+- CardNumber: 4242 4242 4242 4242
+- Expiration date: 04 / 24
+- CVC: 424
+
+Note that, the **admin demo** user didn't have access to delete or modify the following items:
 
 - Product
 - Category
