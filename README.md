@@ -143,6 +143,13 @@ Implemented GLS API Features
     - Delivered
     - BackToTheSender
 
+
+### MySQL Database
+
+<img src="https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/tablerelations.png" height="300px">
+
+[Click to expand](https://referenceprojects-abkno.run-eu-central1.goorm.io/src/github/referencewebshop/tablerelations.png)
+
 ### **Product Manager**
 
 - The product's price has five different parameters:
